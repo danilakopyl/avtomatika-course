@@ -1,8 +1,7 @@
-from typing import List
 import math
 
 
-def nearest_zero(len_array: int, array: str) -> str:
+def nearest_zero(len_array: int, array: int) -> str:
     distances = [0 for i in range(len_array)]
 
     if array[0] == 0:
@@ -20,7 +19,7 @@ def nearest_zero(len_array: int, array: str) -> str:
     for i in range(len_array - 2, -1, -1):
         distances[i] = min(distances[i], distances[i + 1] + 1)
 
-    return " ".join(map(str, distances))
+    return distances
 
 
 if __name__ == '__main__':
